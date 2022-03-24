@@ -1,0 +1,6 @@
+*.css
+*.svg
+
+/.git
+/.vscode
+node_modules

@@ -1,0 +1,88 @@
+// TODO: add import shortcut/alias in create-react-app 
+// https://stackoverflow.com/questions/63067555/how-to-make-an-import-shortcut-alias-in-create-react-app
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [ 
+    "plugin:react/recommended",
+    "airbnb",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12, 
+    "sourceType": "module"
+  },
+  "plugins": [
+    "react",
+    "@typescript-eslint",
+    "react-hooks",
+    "simple-import-sort"
+  ],
+  "rules":{
+    "@typescript-eslint/no-explicit-any": "off",
+    "no-use-before-define": "off",
+    "@typescript-eslint/no-use-before-define": ["error"],
+    "react/jsx-filename-extension": [ "warn", {"extensions": [".tsx"]} ],
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "ts": "never",
+        "tsx": "never"
+      }
+    ],
+    "no-shadow": "off",
+    "@typescript-eslint/no-shadow": ["error"],
+    "max-len": ["warn", { "ignorePattern": "^import\\s.+\\sfrom\\s.+;$", "ignoreUrls": true, "code": 100 }],
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "import/prefer-default-export": "off",
+    "react/prop-types": "off",
+    "react/require-default-props": "off",
+    "simple-import-sort/imports": "error",
+    "simple-import-sort/exports": "error",
+    "import/no-extraneous-dependencies": [
+      "error", {
+        "devDependencies": false,
+        "optionalDependencies": false,
+        "peerDependencies": false,
+        "packageDir": "./"
+      }
+    ],
+    "no-restricted-imports": [
+      "error",
+      {
+        "paths": [{
+          "name": "styled-components",
+          "message": "Please import from styled-components/macro."
+        }],
+        "patterns": [
+          "!styled-components/macro"
+        ]
+      }
+    ],
+    // TODO: enable https://github.com/typescript-eslint/typescript-eslint/blob/v4.19.0/packages/eslint-plugin/docs/rules/explicit-module-boundary-types.md
+    // or @typescript-eslint/explicit-function-return-type
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/explicit-function-return-type": "off",
+    // [
+    //   "error",
+    //   {
+    //     "allowExpressions": true
+    //   }
+    // ]
+    "react/jsx-props-no-spreading": "off"
+  },
+  "settings": {
+    "import/resolver": {
+      "typescript": {}
+    }
+  }
+}
