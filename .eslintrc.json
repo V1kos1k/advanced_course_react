@@ -1,11 +1,11 @@
-// TODO: add import shortcut/alias in create-react-app 
+// TODO: add import shortcut/alias in create-react-app
 // https://stackoverflow.com/questions/63067555/how-to-make-an-import-shortcut-alias-in-create-react-app
 {
   "env": {
     "browser": true,
     "es2021": true
   },
-  "extends": [ 
+  "extends": [
     "plugin:react/recommended",
     "airbnb",
     "plugin:@typescript-eslint/recommended",
@@ -16,20 +16,15 @@
     "ecmaFeatures": {
       "jsx": true
     },
-    "ecmaVersion": 12, 
+    "ecmaVersion": 12,
     "sourceType": "module"
   },
-  "plugins": [
-    "react",
-    "@typescript-eslint",
-    "react-hooks",
-    "simple-import-sort"
-  ],
-  "rules":{
+  "plugins": ["react", "@typescript-eslint", "react-hooks", "simple-import-sort"],
+  "rules": {
     "@typescript-eslint/no-explicit-any": "off",
     "no-use-before-define": "off",
     "@typescript-eslint/no-use-before-define": ["error"],
-    "react/jsx-filename-extension": [ "warn", {"extensions": [".tsx"]} ],
+    "react/jsx-filename-extension": ["warn", { "extensions": [".tsx"] }],
     "import/extensions": [
       "error",
       "ignorePackages",
@@ -39,8 +34,12 @@
       }
     ],
     "no-shadow": "off",
+    "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
     "@typescript-eslint/no-shadow": ["error"],
-    "max-len": ["warn", { "ignorePattern": "^import\\s.+\\sfrom\\s.+;$", "ignoreUrls": true, "code": 100 }],
+    "max-len": [
+      "warn",
+      { "ignorePattern": "^import\\s.+\\sfrom\\s.+;$", "ignoreUrls": true, "code": 100 }
+    ],
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
     "import/prefer-default-export": "off",
@@ -49,7 +48,8 @@
     "simple-import-sort/imports": "error",
     "simple-import-sort/exports": "error",
     "import/no-extraneous-dependencies": [
-      "error", {
+      "error",
+      {
         "devDependencies": false,
         "optionalDependencies": false,
         "peerDependencies": false,
@@ -59,13 +59,13 @@
     "no-restricted-imports": [
       "error",
       {
-        "paths": [{
-          "name": "styled-components",
-          "message": "Please import from styled-components/macro."
-        }],
-        "patterns": [
-          "!styled-components/macro"
-        ]
+        "paths": [
+          {
+            "name": "styled-components",
+            "message": "Please import from styled-components/macro."
+          }
+        ],
+        "patterns": ["!styled-components/macro"]
       }
     ],
     // TODO: enable https://github.com/typescript-eslint/typescript-eslint/blob/v4.19.0/packages/eslint-plugin/docs/rules/explicit-module-boundary-types.md
